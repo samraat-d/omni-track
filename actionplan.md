@@ -20,13 +20,13 @@ Chill
 ---
 
 ## Logic
-
-Google Calendar: 
+- Google Calendar: 
 Add events, edit events, delete events
 Add timetable as an event
 upload image → feed it to any ocr → format output → add events in loop
 Loop through each event
-Result Calculator:
+
+- Result Calculator:
 CGPA, SGPA: take input of semester
 Graph - display cgpa vs semester (progress): table stores the marks and semester → retrieve it and display graph
 Schema diagram for the table and query to get cgpa
