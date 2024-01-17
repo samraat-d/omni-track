@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scholarship Page</title>
+  <script src="your_script.js"></script>
+</head>
+<body>
+  <h1>ScholarMatch Finder</h1>
+  <div>
+    <form id="scholarshipForm">
+      <label>Name: <input type="text" id="name"></label>
+      <label>Age: <input type="text" id="age"></label>
+      <label>DOB: <input type="date" id="dob"></label>
+      <label>Gender:
+        <select id="gender">
+          <option disabled>Choose--</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      
+      </label><br><br>
+      <label>Choose the reservation:
+        <select id="reservation">
+          <option disabled>Choose</option>
+          <option>GEN-EWS</option>
+          <option>OBC-NCL</option>
+          <option>SC</option>
+          <option>ST</option>
+          <option>People with disabilities</option>
+        </select>
+      </label><br><br>
+      <label>Course of interest:
+        <select id="course">
+  
+          <option value="CIVIL ENGINEERING">CIVIL ENGINEERING</option>
+          <option value="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</option>
+          <option value="ELECTRICAL & ELECTRONICS ENGINEERING">ELECTRICAL & ELECTRONICS ENGINEERING</option>
+        <option value="ELECTRONICS & COMMUNICATION ENGINEERING">ELECTRONICS & COMMUNICATION ENGINEERING</option>
+        <option value="INDUSTRIAL ENGINEERING & MANAGEMENT">INDUSTRIAL ENGINEERING & MANAGEMENT</option>
+        <option value="COMPUTER SCIENCE AND ENGINEERING">COMPUTER SCIENCE AND ENGINEERING</option>
+        <option value="ElECTRONICS & TELECOMMUNICATION ENGINEERING">ElECTRONICS & TELECOMMUNICATION ENGINEERING</option>
+        <option value="INFORMATION SCIENCE AND ENGINEERING">INFORMATION SCIENCE AND ENGINEERING</option>
+        <option value="ELECTRONICS & INSTRUMENTATION ENGINEERING">ELECTRONICS & INSTRUMENTATION ENGINEERING</option>
+        <option value="MEDICAL ELECTRONICS ENGINEERING">MEDICAL ELECTRONICS ENGINEERING</option>
+        <option value="BIO TECHNOLOGY">BIO TECHNOLOGY</option>
+        <option value="CHEMICAL ENGINEERING">CHEMICAL ENGINEERING</option>
+        <option value="AEROSPACE ENGINEERING">AEROSPACE ENGINEERING</option>
+        <option value="ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING">ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING</option>
+        <option value="COMPUTER SCIENCE AND ENGINEERING (DATA SCIENCE)">COMPUTER SCIENCE AND ENGINEERING (DATA SCIENCE)</option>
+        <option value="COMPUTER SCIENCE AND ENGINEERING (INTERNET OF THINGS AND CYBER SECURITY INCLUDING BLOCK CHAIN TECHNOLOGY)">COMPUTER SCIENCE AND ENGINEERING (INTERNET OF THINGS AND CYBER SECURITY INCLUDING BLOCK CHAIN TECHNOLOGY)</option>
+        <option value="ARTIFICIAL INTELLIGENCE (AI) AND DATA SCIENCE">ARTIFICIAL INTELLIGENCE (AI) AND DATA SCIENCE</option>
+        <option value="COMPUTER SCIENCE AND BUSINESS SYSTEMS">COMPUTER SCIENCE AND BUSINESS SYSTEMS</option>
+        </select>
+      </label><br><br>
+      <label>GPA: <input type="text" name="gpa" id="gpa"></label>
+      <button type="button" onclick="generateScholarship()">GENERATE!</button>
+    </form>
+  </div>
+  <div id="result"></div>
+</body>
+</html>
+
