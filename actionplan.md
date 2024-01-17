@@ -56,7 +56,7 @@ UI-dark
 09/01/24
 
 - Kruthin - Schema diagram for the table and query to get cgpa
-- Sanjana - fix scholarship, google classroom API integrate to website, database software required for the website (sqlalchemy)
+- Sanjana - fix scholarship (done), google classroom API integrate to website, database software required for the website (sqlalchemy, sqllite)
 - Samraat - get ocr api and try implementing in flask
 
 
