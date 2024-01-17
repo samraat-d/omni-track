@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>GPA CALCULATOR</title>
+  
+    <style>
+        body{text-align: center;}
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    
+
+
+      <label for="num">Enter number of subjects</label><br>
+      <input id="num" name="num" type="number" min=1 max=10><br>
+      <button  value="Enter" onclick="inputmarks()">Enter</button>
+
+  <form id='main' name="name">
+      <label for="sem">Choose your semester uptill which you want to find your cgpa</label> 
+        <select name='sem' id="sem">
+        <option value='1'>Semester 1</option>
+        <option value='2'>Semester 2</option>
+        <option value='3'>Semester 3</option>
+        <option value='4'>Semester 4</option>
+        <option value='5'>Semester 5</option>
+        <option value='6'>Semester 6</option>
+        <option value='7'>Semester 7</option>
+        <option value='8'>Semester 8</option>
+        </select><br><br>
+
+        <label for="dep">Choose your department</label>
+        <select name='dep' id="dep">
+        <option value='aero'>Aeronaurical</option>
+        <option value='cse'>Computer science and Engg</option>
+        <option value='ece'>Electronics and Communication Engg</option>
+        <option value='eee'>Electical and Electronics Engg</option>
+        <option value='mech'>Mechanical Engg</option>
+        <option value='it'>Information Tech</option>
+        </select><br><br>
+        
+   
+        <input type='submit' value="submit"><br><br>
+  </form>
+<br>
+  <div id="marks">
+  </div>
+
+  <script src="gpa.js"></script>
+</body>
+</html>
