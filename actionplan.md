@@ -31,6 +31,10 @@ CGPA, SGPA: take input of semester
 Graph - display cgpa vs semester (progress): table stores the marks and semester → retrieve it and display graph
 Schema diagram for the table and query to get cgpa
 
+- Finance features details:
+
+GIST - (graphing expenses, keeping track of remaining based on daily expenditure, savings, track of money that gets spent monthly -fixed (fees, transport, food, subscriptions), variable (entertainment))
+
 ---
 
 ## Styling
@@ -62,11 +66,16 @@ UI-dark
 24/01/24
 
 -Kruthin - login page
--Sanjana - finance ER
--Samraat - MongoDB Testing
+-Sanjana - cgpa calculator
+-Samraat - MongoDB Testing and form ui
 
 ---
-##
-Finance features details:
 
-GIST- (graphing expenses, keeping track of remaining based on daily expenditure, savings, track of money that gets spent monthly -fixed (fees, transport, food, subscriptions), variable (entertainment))
+## First Evaluation
+
+ChatPDF showcase
+Scholarship form
+Google Calendar add event
+GPA Calculator
+To Do List
+Login Page
