@@ -67,15 +67,15 @@ UI-dark
 
 - Kruthin - login page
 - Sanjana - cgpa calculator
-- Samraat - MongoDB Testing and form ui
+- Samraat - MongoDB Testing and form 
 
 ---
 
 ## First Evaluation
 
 - ChatPDF showcase
-- Scholarship form
+- Scholarship form- (formatting/design, add more fields/scholarship)
 - Google Calendar add event
-- GPA Calculator
+- GPA Calculator-(debug, design/formatting)
 - To Do List
 - Login Page
