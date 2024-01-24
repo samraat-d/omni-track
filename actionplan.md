@@ -33,7 +33,7 @@ Schema diagram for the table and query to get cgpa
 
 - Finance features details:
 
-GIST - (graphing expenses, keeping track of remaining based on daily expenditure, savings, track of money that gets spent monthly -fixed (fees, transport, food, subscriptions), variable (entertainment))
+GIST - graphing expenses, keeping track of remaining based on daily expenditure, savings, track of money that gets spent monthly -fixed (fees, transport, food, subscriptions), variable (entertainment)
 
 ---
 
@@ -65,17 +65,17 @@ UI-dark
 
 24/01/24
 
--Kruthin - login page
--Sanjana - cgpa calculator
--Samraat - MongoDB Testing and form ui
+- Kruthin - login page
+- Sanjana - cgpa calculator
+- Samraat - MongoDB Testing and form ui
 
 ---
 
 ## First Evaluation
 
-ChatPDF showcase
-Scholarship form
-Google Calendar add event
-GPA Calculator
-To Do List
-Login Page
+- ChatPDF showcase
+- Scholarship form
+- Google Calendar add event
+- GPA Calculator
+- To Do List
+- Login Page
