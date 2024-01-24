@@ -11,19 +11,19 @@
         .hidden {
             display: none;
         }
+        #result{
+          color: crimson;
+        }
     </style>
 </head>
 
 <body>
-    
-
-
       <label for="num">Enter number of subjects</label><br>
       <input id="num" name="num" type="number" min=1 max=10><br>
       <button  value="Enter" onclick="inputmarks()">Enter</button>
 
   <form id='main' name="name">
-      <label for="sem">Choose your semester uptill which you want to find your cgpa</label> 
+      <label for="sem">Choose your semester uptil which you want to find your cgpa</label> 
         <select name='sem' id="sem">
         <option value='1'>Semester 1</option>
         <option value='2'>Semester 2</option>
@@ -44,14 +44,13 @@
         <option value='mech'>Mechanical Engg</option>
         <option value='it'>Information Tech</option>
         </select><br><br>
-        
-   
         <input type='submit' value="submit"><br><br>
   </form>
 <br>
   <div id="marks">
   </div>
-
+  <div id="result">
+  </div>
   <script src="gpa.js"></script>
 </body>
 </html>

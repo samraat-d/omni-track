@@ -5,8 +5,6 @@ function inputmarks()
     console.log(n);
     createmarks(n);
 }
-//func
-//function
 function createmarks(n){
 
     marksDiv = document.getElementById("main");
