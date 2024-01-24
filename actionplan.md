@@ -56,7 +56,17 @@ UI-dark
 09/01/24
 
 - Kruthin - Schema diagram for the table and query to get cgpa
-- Sanjana - fix scholarship (done), google classroom API integrate to website, database software required for the website (sqlalchemy, sqllite)
+- Sanjana - fix scholarship (done), google classroom API integrate to website, database software required for the website (sqlalchemy, sqllite/MongoDB)
 - Samraat - get ocr api and try implementing in flask
 
+24/01/24
 
+-Kruthin - login page
+-Sanjana - finance ER
+-Samraat - MongoDB Testing
+
+---
+##
+Finance features details:
+
+GIST- (graphing expenses, keeping track of remaining based on daily expenditure, savings, track of money that gets spent monthly -fixed (fees, transport, food, subscriptions), variable (entertainment))
