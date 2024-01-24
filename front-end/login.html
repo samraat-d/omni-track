@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal Login</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: rgb(157,249,250);
+      background: linear-gradient(0deg, rgba(157,249,250,1) 0%, rgba(185,192,233,1) 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      
+    }
+
+    .login-container {
+      background-color: rgba(50, 66, 104, 0.9);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 300px;
+      text-align: center;
+    }
+
+    .login-header {
+
+      color:rgb(0, 0, 0);
+      text-align: center;
+      padding: 20px;
+      font-size: 1.5em;
+      background-image: url("login2.jpg");
+      background-repeat: no-repeat;
+     background-size:cover;
+    }
+
+    .login-form {
+        color: #fff;
+      padding: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .login-btn {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background-color: #2980b9;
+    }
+
+    .signup-link {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .signup-link:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="login-container">
+  <div class="login-header">
+     Login
+  </div>
+  <div class="login-form">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" placeholder="Enter your username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter your password">
+    </div>
+    <button class="login-btn" onclick="login()">Login</button>
+    <p>Don't have an account? <a href="#" class="signup-link">Sign up</a></p>
+  </div>
+</div>
+
+<script>
+  function login() {
+    // Add your login logic here
+    alert("Login button clicked!");
+  }
+</script>
+
+</body>
+</html>
