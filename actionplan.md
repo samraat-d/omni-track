@@ -33,7 +33,7 @@ Schema diagram for the table and query to get cgpa
 
 - Finance features details:
 
-GIST - graphing expenses, keeping track of remaining based on daily expenditure, savings, track of money that gets spent monthly -fixed (fees, transport, food, subscriptions), variable (entertainment)
+- GIST - graphing expenses, keeping track of remaining based on daily expenditure, savings, track of money that gets spent monthly -fixed (fees, transport, food, subscriptions), variable (entertainment)
 
 - Account details
 ID, Name, Age, DOB, Gender, Email, Phone Number, Username, Password
