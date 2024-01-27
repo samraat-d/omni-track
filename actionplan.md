@@ -67,7 +67,21 @@ UI-dark
 
 - Kruthin - login page
 - Sanjana - cgpa calculator
-- Samraat - MongoDB Testing and form 
+- Samraat - MongoDB Testing and form
+
+29/01/24
+
+- Kruthin - login page frontend
+- Sanjana - todo list frontend
+- Samraat - cgpa and scholarship frontend
+
+---
+## Completed Tasks
+- Login and register backend
+- Scholarship and CGPA logic
+- PDF chatbot logic
+- Calendar logic
+- Todo list logic
 
 ---
 
