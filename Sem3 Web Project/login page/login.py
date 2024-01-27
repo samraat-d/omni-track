@@ -26,6 +26,10 @@ class Accounts(db.Model):
 
 	def __repr__(self):
 		return f'<Account {self.username},{self.password},{self.email}>'
+	
+def object_as_dict(obj):
+	return {c.key: getattr(obj, c.key)
+		for c in inspect(obj).mapper.column_attrs}
 
 @app.route('/')
 @app.route('/login', methods =['GET', 'POST'])
@@ -39,6 +43,9 @@ def login():
 		password1 = request.form['password']
 		account = Accounts.query.filter_by(username=username1, password=password1).first()
 		print(account)
+		query = Accounts.query.all()
+		for user in query:
+			print(object_as_dict(user))
 		if account:
 			session['loggedin'] = True
 			#session['id'] = account['id']
