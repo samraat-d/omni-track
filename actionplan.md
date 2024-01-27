@@ -71,9 +71,9 @@ UI-dark
 
 29/01/24
 
-- Kruthin - login page frontend
+- Kruthin - login page frontend cgpa and scholarship frontend
 - Sanjana - todo list frontend
-- Samraat - cgpa and scholarship frontend
+- Samraat - google calendar frontend
 
 ---
 ## Completed Tasks
