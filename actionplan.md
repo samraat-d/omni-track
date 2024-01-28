@@ -40,7 +40,7 @@ ID, Name, Age, DOB, Gender, Email, Phone Number, Username, Password
 Optional: OTP to verify phone number, recaptcha verification
 
 - Nav Bar
-Home
+Home, CGPA Calculator, Scholarship, Google Calendar, Todo List, Finance, (Notes, Classroom)
 ---
 
 ## Styling
@@ -80,6 +80,13 @@ UI-dark
 - Kruthin - login page frontend cgpa and scholarship frontend
 - Sanjana - todo list frontend
 - Samraat - google calendar frontend
+
+31/01/24
+
+- Kruthin - CGPA Frontend
+- Sanjana - Scholarship Frontend
+- Samraat - Login Page Backend
+Optional: Google Calendar Backend and Frontend
 
 ---
 ## Completed Tasks
