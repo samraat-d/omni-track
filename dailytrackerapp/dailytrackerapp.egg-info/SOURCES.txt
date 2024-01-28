@@ -1,0 +1,8 @@
+setup.py
+dailytrackerapp/__init__.py
+dailytrackerapp/login.py
+dailytrackerapp.egg-info/PKG-INFO
+dailytrackerapp.egg-info/SOURCES.txt
+dailytrackerapp.egg-info/dependency_links.txt
+dailytrackerapp.egg-info/requires.txt
+dailytrackerapp.egg-info/top_level.txt

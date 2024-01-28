@@ -32,7 +32,7 @@ def index():
 @app.route('/oauth2callback')
 def oauth2callback():
   flow = client.flow_from_clientsecrets(
-      'client_secrets.json',
+      'Sem3 Web Project\calendar page\client_secrets.json',
       scope='https://www.googleapis.com/auth/calendar',
       redirect_uri=flask.url_for('oauth2callback', _external=True))
   if 'code' not in flask.request.args:
@@ -72,13 +72,13 @@ def getCalendars():
       for calendar_list_entry in calendar_list['items']:
         calendars.append({"name": calendar_list_entry['summary'], "id": calendar_list_entry['id']})
       now = datetime.datetime.utcnow().isoformat() + "Z"  # 'Z' indicates UTC time
-      print("Getting the upcoming 10 events")
+      print("Getting the upcoming 40 events")
       events_result = (
         service.events()
         .list(
             calendarId="primary",
             timeMin=now,
-            maxResults=10,
+            maxResults=40,
             singleEvents=True,
             orderBy="startTime",
         )
@@ -93,7 +93,7 @@ def getCalendars():
     # Prints the start and name of the next 10 events
       for event in events:
         start = event["start"].get("dateTime", event["start"].get("date"))
-        print(start, event["summary"])
+        print(event, start, event["summary"])
 
       page_token = calendar_list.get('nextPageToken')
       if not page_token:
