@@ -39,6 +39,8 @@ Schema diagram for the table and query to get cgpa
 ID, Name, Age, DOB, Gender, Email, Phone Number, Username, Password
 Optional: OTP to verify phone number, recaptcha verification
 
+- Nav Bar
+Home
 ---
 
 ## Styling
