@@ -33,8 +33,14 @@ Schema diagram for the table and query to get cgpa
 
 - Finance features details:
 
-GIST - graphing expenses, keeping track of remaining based on daily expenditure, savings, track of money that gets spent monthly -fixed (fees, transport, food, subscriptions), variable (entertainment)
+- GIST - graphing expenses, keeping track of remaining based on daily expenditure, savings, track of money that gets spent monthly -fixed (fees, transport, food, subscriptions), variable (entertainment)
 
+- Account details
+ID, Name, Age, DOB, Gender, Email, Phone Number, Username, Password
+Optional: OTP to verify phone number, recaptcha verification
+
+- Nav Bar
+Home, CGPA Calculator, Scholarship, Google Calendar, Todo List, Finance, (Notes, Classroom)
 ---
 
 ## Styling
@@ -67,7 +73,28 @@ UI-dark
 
 - Kruthin - login page
 - Sanjana - cgpa calculator
-- Samraat - MongoDB Testing and form 
+- Samraat - MongoDB Testing and form
+
+29/01/24
+
+- Kruthin - login page frontend cgpa and scholarship frontend
+- Sanjana - todo list frontend
+- Samraat - google calendar frontend
+
+31/01/24
+
+- Kruthin - CGPA Frontend
+- Sanjana - Scholarship Frontend
+- Samraat - Login Page Backend
+Optional: Google Calendar Backend and Frontend
+
+---
+## Completed Tasks
+- Login and register backend
+- Scholarship and CGPA logic
+- PDF chatbot logic
+- Calendar logic
+- Todo list logic
 
 ---
 
