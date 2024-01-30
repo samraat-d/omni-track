@@ -1,7 +1,7 @@
 let gradeval$;
 let creditval$;
 let marksval$;
-let n1; // Declare n1 here to avoid the undefined error
+let n1; 
 
 function inputmarks() {
     var n = document.getElementById("num").value;
