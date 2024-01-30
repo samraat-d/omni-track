@@ -72,18 +72,17 @@ function generateScholarship() {
   
   function displayResult(matchingScholarships) {
     var resultDiv = document.getElementById("result");
-    resultDiv.innerHTML = "<h2>Matching Scholarships:</h2>";
+    resultDiv.innerHTML = "<h2>Matching Scholarships:</h2><br><br>";
     
     if (matchingScholarships.length === 0) {
       resultDiv.innerHTML += "<p>No matching scholarships found.</p>";
     } else {
       matchingScholarships.forEach(function(scholarship) {
         resultDiv.innerHTML += "<p>Name: " + scholarship.name + "</p>";
-        resultDiv.innerHTML += "<p>Criteria:</p>";
         for (var criterion in scholarship.criteria) {
           resultDiv.innerHTML += "<p>" + criterion + ": " + scholarship.criteria[criterion] + "</p>";
         }
-        resultDiv.innerHTML += "<hr>";
+        resultDiv.innerHTML += "<br><hr><br><br>";
       });
     }
   }
