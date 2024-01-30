@@ -1,56 +1,61 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GPA CALCULATOR</title>
-  
-    <style>
-        body{text-align: center;}
-        .hidden {
-            display: none;
-        }
-        #result{
-          color: crimson;
-        }
-    </style>
+  <link rel="stylesheet" href="gpa2.css">
+  <script src="gpa2.js"></script>
 </head>
-
 <body>
-      <label for="num">Enter number of subjects</label><br>
-      <input id="num" name="num" type="number" min=1 max=10><br>
-      <button  value="Enter" onclick="inputmarks()">Enter</button>
-
-  <form id='main' name="name">
-      <label for="sem">Choose your semester uptil which you want to find your cgpa</label> 
-        <select name='sem' id="sem">
-        <option value='1'>Semester 1</option>
-        <option value='2'>Semester 2</option>
-        <option value='3'>Semester 3</option>
-        <option value='4'>Semester 4</option>
-        <option value='5'>Semester 5</option>
-        <option value='6'>Semester 6</option>
-        <option value='7'>Semester 7</option>
-        <option value='8'>Semester 8</option>
-        </select><br><br>
-
-        <label for="dep">Choose your department</label>
-        <select name='dep' id="dep">
-        <option value='aero'>Aeronaurical</option>
-        <option value='cse'>Computer science and Engg</option>
-        <option value='ece'>Electronics and Communication Engg</option>
-        <option value='eee'>Electical and Electronics Engg</option>
-        <option value='mech'>Mechanical Engg</option>
-        <option value='it'>Information Tech</option>
-        </select><br><br>
-        <input type='submit' value="submit"><br><br>
+  <h1>GPA CALCULATOR</h1>
+  <div class="formbold-main-wrapper">
+    <div class="formbold-form-wrapper">
+      <form id="gpaForm">
+        <label class="formbold-form-label">Choose the semister: <br><br>
+            <select id="reservation" class="formbold-form-input">
+              <option disabled selected>Choose</option>
+              <option value='1'>Semester 1</option>
+              <option value='2'>Semester 2</option>
+              <option value='3'>Semester 3</option>
+              <option value='4'>Semester 4</option>
+              <option value='5'>Semester 5</option>
+              <option value='6'>Semester 6</option>
+              <option value='7'>Semester 7</option>
+              <option value='8'>Semester 8</option>
+            </select>
+          </label>
+        <label class="formbold-form-label">Choose the department: <br><br>
+            <select id="course" class="formbterestold-form-input">
+            <option value="CIVIL ENGINEERING">CIVIL ENGINEERING</option>
+            <option value="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</option>
+            <option value="ELECTRICAL & ELECTRONICS ENGINEERING">ELECTRICAL & ELECTRONICS ENGINEERING</option>
+            <option value="ELECTRONICS & COMMUNICATION ENGINEERING">ELECTRONICS & COMMUNICATION ENGINEERING</option>
+            <option value="INDUSTRIAL ENGINEERING & MANAGEMENT">INDUSTRIAL ENGINEERING & MANAGEMENT</option>
+          <option value="COMPUTER SCIENCE AND ENGINEERING">COMPUTER SCIENCE AND ENGINEERING</option>
+          <option value="ElECTRONICS & TELECOMMUNICATION ENGINEERING">ElECTRONICS & TELECOMMUNICATION ENGINEERING</option>
+          <option value="INFORMATION SCIENCE AND ENGINEERING">INFORMATION SCIENCE AND ENGINEERING</option>
+          <option value="ELECTRONICS & INSTRUMENTATION ENGINEERING">ELECTRONICS & INSTRUMENTATION ENGINEERING</option>
+          <option value="MEDICAL ELECTRONICS ENGINEERING">MEDICAL ELECTRONICS ENGINEERING</option>
+          <option value="BIO TECHNOLOGY">BIO TECHNOLOGY</option>
+          <option value="CHEMICAL ENGINEERING">CHEMICAL ENGINEERING</option>
+          <option value="AEROSPACE ENGINEERING">AEROSPACE ENGINEERING</option>
+          <option value="ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING">ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING</option>
+          <option value="COMPUTER SCIENCE AND ENGINEERING (DATA SCIENCE)">COMPUTER SCIENCE AND ENGINEERING (DATA SCIENCE)</option>
+          <option value="COMPUTER SCIENCE AND ENGINEERING (INTERNET OF THINGS AND CYBER SECURITY INCLUDING BLOCK CHAIN TECHNOLOGY)">COMPUTER SCIENCE AND ENGINEERING (INTERNET OF THINGS AND CYBER SECURITY INCLUDING BLOCK CHAIN TECHNOLOGY)</option>
+          <option value="ARTIFICIAL INTELLIGENCE (AI) AND DATA SCIENCE">ARTIFICIAL INTELLIGENCE (AI) AND DATA SCIENCE</option>
+          <option value="COMPUTER SCIENCE AND BUSINESS SYSTEMS">COMPUTER SCIENCE AND BUSINESS SYSTEMS</option>
+            </select>
+          </label>
+        <label  for="num" class="formbold-form-label">Enter the number of subjects <br><br><input type="number" id="num" class="formbold-form-input" min="0" max="10"></label>
+        <button type="button" class="formbold-btn" onclick="inputmarks()">GENERATE!</button><br><br>
+        <div id="gpaForm1"></div>
   </form>
-<br>
-  <div id="marks">
-  </div>
-  <div id="result">
-  </div>
-  <script src="gpa.js"></script>
+</br>
+  <button type="button" class="formbold-btn" onclick="gpacal()">Submit</button>
+</br></br></br>
+  <div id="result"></div>
+</div>
+</div>
 </body>
 </html>
