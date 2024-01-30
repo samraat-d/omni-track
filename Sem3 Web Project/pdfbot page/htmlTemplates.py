@@ -36,7 +36,7 @@ bot_template = '''
 user_template = '''
 <div class="chat-message user">
     <div class="avatar">
-        <img src="https://i.ibb.co/jrKfKkJ/image2.jpg">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/010/803/794/original/business-man-cartoon-character-talking-4k-animation-green-screen-background-free-video.jpg">
     </div>    
     <div class="message">{{MSG}}</div>
 </div>

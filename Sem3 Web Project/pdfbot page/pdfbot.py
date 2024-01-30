@@ -25,15 +25,15 @@ def get_text_chunks(text):
     return chunks
 
 def get_vector_store(text_chunks):
-    embeddings=OpenAIEmbeddings()
-    #embeddings=HuggingFaceEmbeddings(model_name = embedding_model_name)
+    #embeddings=OpenAIEmbeddings()
+    embeddings=HuggingFaceEmbeddings(model_name = embedding_model_name)
     vectorstore = FAISS.from_texts(text_chunks, embedding=embeddings)
     return vectorstore
 
 
 def get_conversation_chain(vectorstore):
-    llm = ChatOpenAI()
-    #llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", model_kwargs={"temperature":0.5, "max_length":512})
+    #llm = ChatOpenAI()
+    llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", model_kwargs={"temperature":0.5, "max_length":512})
     memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
     conversation_chain = ConversationalRetrievalChain.from_llm(llm=llm,retriever=vectorstore.as_retriever(),memory=memory)
     return conversation_chain
@@ -74,7 +74,6 @@ def main():
         - [LangChain](https://python.langchain.com/)
         - [OpenAI](https://platform.openai.com/docs/models) LLM Model
         ''')
-        st.write('Do Checkout the YouTube Channel as well for amazing content [Muhammad Moin](https://www.youtube.com/channel/UC--6PuiEdiQY8nasgNluSOA)')
         if st.button('Process'):
             with st.spinner("Processing"):
                 #Extract Text from PDF
