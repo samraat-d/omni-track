@@ -13,7 +13,7 @@ from sqlalchemy import inspect
  
 # (A2) FLASK SETTINGS + INIT
 HOST_NAME = "localhost"
-HOST_PORT = 3030
+HOST_PORT = 5000
 app = Flask(__name__)
 # app.debug = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///trial.db'
