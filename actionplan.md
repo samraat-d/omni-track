@@ -113,4 +113,4 @@ Optional: Google Calendar Backend and Frontend
 - Profile set up page 
 - Ask the user to enter name, USN, and section details to get access to the timetable and sync to calender
 - To-do List React.js
-- Finance tracker start
+- Finance tracker ER Diagram
