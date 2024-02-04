@@ -90,7 +90,7 @@ Optional: Google Calendar Backend and Frontend
 
 ---
 ## Completed Tasks
-- Login and register backend
+- Login and register the backend
 - Scholarship and CGPA logic
 - PDF chatbot logic
 - Calendar logic
@@ -104,5 +104,13 @@ Optional: Google Calendar Backend and Frontend
 - Scholarship form- (formatting/design, add more fields/scholarship)
 - Google Calendar add event
 - GPA Calculator-(debug, design/formatting)
-- To Do List
+- To-Do List
 - Login Page
+
+---
+## Post-cie2 Work (13/02/24)
+
+- Profile set up page 
+- Ask the user to enter name, USN, and section details to get access to the timetable and sync to calender
+- To-do List React.js
+- Finance tracker ER Diagram
