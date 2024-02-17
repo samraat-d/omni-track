@@ -35,11 +35,11 @@ def object_as_dict(obj):
 @app.route('/')
 @app.route('/login', methods =['GET', 'POST'])
 def login():
-	msg_username= ''
+	msg_username = ''
 	msg_password = ''
 	msg = ''
 
-	if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+	if request.method == 'POST':
 		username1 = request.form['username']
 		password1 = request.form['password']
 		account = Accounts.query.filter_by(username=username1, password=password1).first()
@@ -52,13 +52,16 @@ def login():
 			session['username'] = account.username
 			msg = 'Logged in successfully !'
 			return render_template('index.html', msg = msg)
-		elif username1 == None or username1 == '':
+		elif len(username1)==0 or not re.match(r'[^@]+@[^@]+\.[^@]+', username1):
+			print("username wrong")
 			msg_username = 'Enter username'
-		elif password1 == None or password1 == '':
+			msg = 'Incorrect username / password !'
+		elif len(password1) == 0:
 			msg_password = 'Enter password'
+			msg = 'Incorrect username / password !'
 		else:
 			msg = 'Incorrect username / password !'
-	return render_template('register.html', msg_username = msg_username, msg_password = msg_password, msg=msg)
+	return render_template('login.html', msg_username = msg_username, msg_password = msg_password, msg=msg)
 
 @app.route('/logout')
 def logout():
