@@ -15,12 +15,13 @@ app = Flask(__name__)
 app.secret_key = "sam24"
 socketio = SocketIO(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///trial.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///omnitrack.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 class Accounts(db.Model):
-	username = db.Column(db.String, unique=True, primary_key = True)
+	id = db.Column(db.String, primary_key = True)
+	username = db.Column(db.String, unique=True)
 	password = db.Column(db.String, nullable = False)
 	email = db.Column(db.String)
 
@@ -34,32 +35,35 @@ def object_as_dict(obj):
 @app.route('/')
 @app.route('/login', methods =['GET', 'POST'])
 def login():
+	msg_username= ''
+	msg_password = ''
 	msg = ''
-	metadata = MetaData()
-	engine = create_engine('sqlite:///trial.db')
-	metadata.create_all(engine)
+
 	if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
 		username1 = request.form['username']
 		password1 = request.form['password']
 		account = Accounts.query.filter_by(username=username1, password=password1).first()
-		print(account)
-		query = Accounts.query.all()
-		for user in query:
-			print(object_as_dict(user))
+		#query = Accounts.query.all()
+		#for user in query:
+			#print(object_as_dict(user))
 		if account:
 			session['loggedin'] = True
-			#session['id'] = account['id']
+			session['id'] = account.id
 			session['username'] = account.username
 			msg = 'Logged in successfully !'
 			return render_template('index.html', msg = msg)
+		elif username1 == None or username1 == '':
+			msg_username = 'Enter username'
+		elif password1 == None or password1 == '':
+			msg_password = 'Enter password'
 		else:
 			msg = 'Incorrect username / password !'
-	return render_template('login.html', msg = msg)
+	return render_template('register.html', msg_username = msg_username, msg_password = msg_password, msg=msg)
 
 @app.route('/logout')
 def logout():
 	session.pop('loggedin', None)
-	#session.pop('id', None)
+	session.pop('id', None)
 	session.pop('username', None)
 	return redirect(url_for('login'))
 
