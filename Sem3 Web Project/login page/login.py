@@ -3,6 +3,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
 import re
+import random
 from flask_socketio import SocketIO
 from sqlalchemy import create_engine
 from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
@@ -38,11 +39,13 @@ def login():
 	msg_username = ''
 	msg_password = ''
 	msg = ''
+	msg_register = ''
 
 	if request.method == 'POST':
 		username1 = request.form['username']
 		password1 = request.form['password']
 		account = Accounts.query.filter_by(username=username1, password=password1).first()
+		print(username1, password1)
 		#query = Accounts.query.all()
 		#for user in query:
 			#print(object_as_dict(user))
@@ -52,16 +55,15 @@ def login():
 			session['username'] = account.username
 			msg = 'Logged in successfully !'
 			return render_template('index.html', msg = msg)
-		elif len(username1)==0 or not re.match(r'[^@]+@[^@]+\.[^@]+', username1):
-			print("username wrong")
-			msg_username = 'Enter username'
-			msg = 'Incorrect username / password !'
-		elif len(password1) == 0:
-			msg_password = 'Enter password'
-			msg = 'Incorrect username / password !'
-		else:
-			msg = 'Incorrect username / password !'
-	return render_template('login.html', msg_username = msg_username, msg_password = msg_password, msg=msg)
+		if len(username1)==0:
+			msg_username = 'alert-validate'
+			msg = 'Incorrect username or password !'
+		if len(password1)==0:
+			msg_password = 'alert-validate'
+			msg = 'Incorrect username or password !'
+		
+
+	return render_template('login.html', msg_username = msg_username, msg_password = msg_password, msg=msg, msg_register = msg_register)
 
 @app.route('/logout')
 def logout():
@@ -73,27 +75,52 @@ def logout():
 @app.route('/register', methods =['GET', 'POST'])
 def register():
 	msg = ''
-	if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form :
+	msg_username = ''
+	msg_username_class = ''
+	msg_password = ''
+	msg_password_class = ''
+	msg_confirmpass = ''
+	msg_confirmpass_class = ''
+	flag = 0
+	if request.method == 'POST':
 		username1 = request.form['username']
 		password1 = request.form['password']
-		email1 = request.form['email']
+		confirmpass1 = request.form['confirmpass']
 		account = Accounts.query.filter_by(username=username1).first()
+		if not re.match(r'[A-Za-z0-9]+', username1):
+			msg_username = 'Create unique username'
+			msg_username_class = 'alert-validate'
+			flag = 1
 		if account:
-			msg = 'Account already exists !'
-		elif not re.match(r'[^@]+@[^@]+\.[^@]+', email1):
-			msg = 'Invalid email address !'
-		elif not re.match(r'[A-Za-z0-9]+', username1):
-			msg = 'Username must contain only characters and numbers !'
-		elif not username1 or not password1 or not email1:
-			msg = 'Please fill out the form !'
+			msg_username = 'Account already exists'
+			msg_username_class = 'alert-validate'
+			flag = 1
+		if not password1:
+			msg_password = 'Enter passoword'
+			msg_password_class = 'alert-validate'
+			flag = 1
+		if not confirmpass1:
+			msg_confirmpass = 'Enter passoword'
+			msg_confirmpass_class = 'alert-validate'
+			flag = 1
+		if confirmpass1 != password1:
+			msg_confirmpass = 'Password not matching'
+			msg_confirmpass_class = 'alert-validate'
+			flag = 1
+			
+		if flag ==1:
+			msg="Incorrect details entered"
 		else:
-			new_account = Accounts(username = username1, password = password1, email = email1)
+			id = random.randrange(100, 999)
+			id_check = Accounts.query.filter_by(id=id).first()
+			while(id_check == id):
+				id = random.randrange(100, 999)
+			new_account = Accounts(id=id, username = username1, password = password1, email = None)
 			db.session.add(new_account)
-			msg = 'You have successfully registered !'
+			msg = 'You have successfully registered!'
 			db.session.commit()
-	elif request.method == 'POST':
-		msg = 'Please fill out the form !'
-	return render_template('register.html', msg = msg)
+			return render_template('login.html', msg_register = msg)
+	return render_template('register.html', msg = msg, msg_password = msg_password, msg_username = msg_username, msg_password_class = msg_password_class, msg_username_class = msg_username_class, msg_confirmpass = msg_confirmpass, msg_confirmpass_class = msg_confirmpass_class)
 
 
 if __name__ == "__main__":

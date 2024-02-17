@@ -48,6 +48,23 @@
 .moveslider {
     left: 186px;
 }
+
+.registerslider{
+    height: 60px;
+    width: 150px;
+    border-radius: 50px;
+    background-image: linear-gradient(to right,
+            rgb(94, 0, 113),
+            rgb(0, 19, 143));
+    position: relative;
+    top: 80px;
+    left: 186px;
+    transition: all 0.5s ease-in-out;
+}
+
+.moveregisterslider {
+    left: 54px;
+}
  
 .form-section {
     height: 369px;
@@ -70,23 +87,11 @@
     align-items: center;
     justify-content: center;
     padding: 0px 40px;
-    padding-top: 20px;
+    padding-top: 98px;
     padding-left: 0px;
     padding-right: 100px;
 }
 
-
-.clkbtn {
-    height: 60px;
-    width: 150px;
-    border-radius: 50px;
-    background-image: linear-gradient(to right,
-            rgb(255, 195, 110),
-            rgb(255, 146, 91));
-    font-size: 22px;
-    border: none;
-    cursor: pointer;
-}
  
 /* For Responsiveness of the page */
  

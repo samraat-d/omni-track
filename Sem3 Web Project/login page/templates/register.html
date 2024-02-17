@@ -28,40 +28,39 @@
 				<span class="login100-form-logo">
 					<i class="zmdi zmdi-landscape"></i>
 				</span>
-				<div class="slider"></div>
+				<div class="registerslider"></div>
 				<div class="btn">
 					<button class="login">Login</button>
 					<button class="signup">Register</button>
 				</div>
-				<form class="login100-form validate-form" action="{{ url_for('login') }}" method="post">
-					
+				<form class="login100-form validate-form" action="{{ url_for('register') }}" method="post">
 					<div class="form-section">
-						<div class="login-box">
-							<div id="usernamediv" class="wrap-input100 validate-input {{ msg_username }}" data-validate = "Enter username">
-								<input class="input100" type="text" name="username" id="username" placeholder="Username">
+						<div class="signup-box">
+							<div class="wrap-input100 validate-input {{msg_username_class}}" data-validate = "{{msg_username}}">
+								<input class="input100" type="text" name="username" id='username' placeholder="Create Username">
 								<span class="focus-input100" data-placeholder="&#xf207;"></span>
 							</div>
 
-							<div id="passworddiv" class="wrap-input100 validate-input {{ msg_password }}" data-validate="Enter passoword">
-								<input class="input100" type="password" name="password" placeholder="Password">
+							<div class="wrap-input100 validate-input {{msg_password_class}}" data-validate="{{msg_password}}">
+								<input class="input100" type="password" name="password" id="password" placeholder="Create Password">
+								<span class="focus-input100" data-placeholder="&#xf191;"></span>
+							</div>
+							<div class="wrap-input100 validate-input {{msg_confirmpass_class}}" data-validate="{{msg_confirmpass}}">
+								<input class="input100" type="password" name="confirmpass" id="confirmpass" placeholder="Confirm Password">
 								<span class="focus-input100" data-placeholder="&#xf191;"></span>
 							</div>
 
 							<div class="container-login100-form-btn" id="checkid" data-validate="{{ msg }}">
 								{{ msg }}
 							</div>
-							<div class="container-login100-form-btn">
-								{{ msg_register }}
-							</div>
 							<br>
 							<div class="container-login100-form-btn">
-								<input type="submit" class="login100-form-btn" value="Login">
+								<input type="submit" class="login100-form-btn" value="Sign Up">
 							</div>
 
-
-							<div class="text-center p-t-90">
-								<a class="txt1" href="{{ url_for('register') }}">
-									Don't have an account? Register
+							<div class="text-center p-t-90" style="width: 200px;">
+								<a class="txt1" href="{{ url_for('login')}}">
+									Already have an account? Login
 								</a>
 							</div>
 						</div>
@@ -97,17 +96,17 @@
 		
 let signup = document.querySelector(".signup");
 let login = document.querySelector(".login");
-let slider = document.querySelector(".slider");
+let slider = document.querySelector(".registerslider");
 let formSection = document.querySelector(".form-section");
  
 signup.addEventListener("click", () => {
-    slider.classList.add("moveslider");
 	href = "/register";
 	console.log(href);
 	window.location.href = href;
 });
  
 login.addEventListener("click", () => {
+    slider.classList.add("moveregisterslider");
 	href = "/login";
 	console.log(href);
 	window.location.href = href;

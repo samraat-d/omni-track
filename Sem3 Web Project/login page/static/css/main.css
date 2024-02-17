@@ -349,6 +349,7 @@ iframe {
 /*------------------------------------------------------------------
 [ Button ]*/
 .container-login100-form-btn {
+  color: #fff;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -362,7 +363,7 @@ iframe {
 .login100-form-btn {
   font-family: Poppins-Medium;
   font-size: 16px;
-  color: #555555;
+  color: #fff;
   line-height: 1.2;
 
   display: -webkit-box;
