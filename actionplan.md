@@ -115,14 +115,13 @@ Optional: Google Calendar Backend and Frontend
 - To-do List React.js
 - Finance tracker ER Diagram
 
-#### 14/02/24
-- Samraat: Login page + profile page
-- Kruthin: Backend function for cgpa, whole er
-- Sanjana: To-Do list and whole er
-
 #### 21/02/24
-- Samraat: Time table and section
-- Kruthin: 
-- Sanjana: 
+- Samraat: Login page + profile page
+- Kruthin: frontend function for cgpa, homepage
+- Sanjana: To-Do list, front end scholarship, homepage
 
 #### 28/02/24
+- Samraat: Timetable and chatpdf
+- Kruthin: homepage
+- Sanjana: React.js, to-do, homepage 
+
