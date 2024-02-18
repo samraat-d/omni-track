@@ -276,7 +276,7 @@ hr{
 .input100 {
   font-family: Poppins-Regular;
   font-size: 16px;
-  color: #fff;
+  color: #000000;
   line-height: 1.2;
 
   display: block;
@@ -295,6 +295,7 @@ hr{
   top: 0;
   left: 0;
   pointer-events: none;
+  background-color: #d2d2d2;
 }
 
 .focus-input100::before {
@@ -311,13 +312,13 @@ hr{
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 
-  background: #fff;
+  background: #000000;
 }
 
 .focus-input100::after {
   font-family: Material-Design-Iconic-Font;
   font-size: 22px;
-  color: #fff;
+  color: #000000;
 
   content: attr(data-placeholder);
   display: block;
