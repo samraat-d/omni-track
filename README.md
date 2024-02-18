@@ -33,6 +33,7 @@ The website has google calendar integration to add events dynamically. This is u
 - HTML/CSS/Javascript
 - Flask
 - React.js
+- Vanta.js
 - jQuery
 - Socket
 - SQLlite
