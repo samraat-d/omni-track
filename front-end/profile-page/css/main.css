@@ -114,15 +114,15 @@ textarea:focus:-moz-placeholder { color:transparent; }
 textarea:focus::-moz-placeholder { color:transparent; }
 textarea:focus:-ms-input-placeholder { color:transparent; }
 
-input::-webkit-input-placeholder { color: #fff;}
-input:-moz-placeholder { color: #fff;}
-input::-moz-placeholder { color: #fff;}
-input:-ms-input-placeholder { color: #fff;}
+input::-webkit-input-placeholder { color: #7894b1;}
+input:-moz-placeholder { color: #7894b1;}
+input::-moz-placeholder { color: #7894b1;}
+input:-ms-input-placeholder { color: #7894b1;}
 
-textarea::-webkit-input-placeholder { color: #fff;}
-textarea:-moz-placeholder { color: #fff;}
-textarea::-moz-placeholder { color: #fff;}
-textarea:-ms-input-placeholder { color: #fff;}
+textarea::-webkit-input-placeholder { color: #7894b1;}
+textarea:-moz-placeholder { color: #7894b1;}
+textarea::-moz-placeholder { color: #7894b1;}
+textarea:-ms-input-placeholder { color: #7894b1;}
 
 label {
   margin: 0;
@@ -235,7 +235,7 @@ hr{
 
 .login100-form-logo {
   font-size: 60px; 
-  color: #333333;
+  color: #ff0000;
 
   display: -webkit-box;
   display: -webkit-flex;
@@ -269,7 +269,7 @@ hr{
 .wrap-input100 {
   width: 100%;
   position: relative;
-  border-bottom: 2px solid rgba(255,255,255,0.24);
+  border-bottom: 2px solid rgba(27, 4, 95, 0.24);
   margin-bottom: 30px;
 }
 
@@ -295,7 +295,7 @@ hr{
   top: 0;
   left: 0;
   pointer-events: none;
-  background-color: #d2d2d2;
+  background-color: transparent;
 }
 
 .focus-input100::before {
@@ -312,13 +312,13 @@ hr{
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 
-  background: #000000;
+  background: #0a0241;
 }
 
 .focus-input100::after {
   font-family: Material-Design-Iconic-Font;
   font-size: 22px;
-  color: #000000;
+  color: #0a0241;
 
   content: attr(data-placeholder);
   display: block;
