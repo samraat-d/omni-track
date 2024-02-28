@@ -3,12 +3,12 @@
     <title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	  <link rel="stylesheet" type="text/css" href="static/fonts/iconic/css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" type="text/css" href="static/css/main.css">
-    <link rel="stylesheet" type="text/css" href="static/css/util.css">
-    <link rel="stylesheet" type="text/css" href="static/css/profile.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('profile.static', filename='profile/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('profile.static', filename='profile/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('profile.static', filename='profile/fonts/iconic/css/material-design-iconic-font.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('profile.static', filename='profile/css/main.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('profile.static', filename='profile/css/util.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('profile.static', filename='profile/css/profile.css') }}">
 </head>
 <body>
 	<div class="container">
@@ -19,6 +19,9 @@
                   <div class="card mb-3" style="height: 100%;">
                     <div class="wrap-login100">
                         <div class="card-body">
+                          <div class="col-sm-3" style="padding-top: 15px;">
+                            <h6 class="mb-0">{{msg}}</h6>
+                          </div>
                             <div class="row">
                               <div class="col-sm-3" style="padding-top: 15px;">
                                 <h6 class="mb-0">Full Name</h6>
@@ -130,7 +133,7 @@
                                     <span>Change Image</span>
                                   </label>
                                   <input id="file" type="file" onchange="loadFile(event)"/>
-                                  <img src="https://cdn.pixabay.com/photo/2017/08/06/21/01/louvre-2596278_960_720.jpg" id="output_img" width="200" />
+                                  <img src="{{profile_pic}}" id="output_img" width="200" />
                                 </div>
                               </div>
                             </div>
@@ -138,7 +141,7 @@
                             <div class="row">
                               <div class="col-sm-12">
                                   <div class="container-login100-form-btn">
-                                      <a class="login100-form-btn" target="__blank" href="profile.html">Save</a>
+                                      <a class="login100-form-btn" target="__blank" href="{{url_for('profile.profile')}}">Save</a>
                                   </div>
                               </div>
                             </div>

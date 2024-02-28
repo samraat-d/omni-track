@@ -18,7 +18,29 @@ def object_as_dict(obj):
 		for c in inspect(obj).mapper.column_attrs}
 
 @bp.route('/profile')
-def login():
-	#account = Account_Details.query.filter_by(username=id, password=password1).first()
-	return render_template('profile/profile.html', )
+def profile():
+	logcheck = session.get('loggedin')
+	if logcheck == True:
+		id = session.get('id')
+		account = Account_Details.query.filter_by(id=id)
+		if account:
+			full_name = account.name
+			email = account.email
+			phone = account.phone
+			dob = account.dob
+			address = account.address
+			website = account.website
+			github = account.github
+			twitter = account.twitter
+			instagram = account.instagram
+			facebook = account.facebook
+			profile_pic = account.profile_pic
+			return render_template('profile/profile.html', full_name=full_name, email=email, phone=phone, dob=dob, address=address, website=website, github=github, twitter=twitter, instagram=instagram, facebook=facebook, profile_pic=profile_pic)
+	else:
+		return render_template('login/login.html')
+	return render_template('profile/profile.html')
+
+@bp.route('/profile_edit')
+def profile_edit():
+	return render_template('profile/profile-edit.html')
 

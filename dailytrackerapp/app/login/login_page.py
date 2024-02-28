@@ -4,6 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
 from app.login import login
 from app.models import Accounts
+from app.models import Account_Details
 from app import db
 import re
 import random
@@ -38,14 +39,14 @@ def login_func():
 			session['id'] = account.id
 			session['username'] = account.username
 			msg = 'Logged in successfully !'
-			return render_template('login/index.html', msg = msg)
+			profile_pic = '../profile/static/profile/pics/default-pfp.jpg'
+			return render_template('profile/profile-edit.html', profile_pic=profile_pic, msg=msg)
 		if len(username1)==0:
 			msg_username = 'alert-validate'
 			msg = 'Incorrect username or password !'
 		if len(password1)==0:
 			msg_password = 'alert-validate'
 			msg = 'Incorrect username or password !'
-		
 
 	return render_template('login/login.html', msg_username = msg_username, msg_password = msg_password, msg=msg, msg_register = msg_register)
 
@@ -99,7 +100,9 @@ def register():
 			id_check = Accounts.query.filter_by(id=id).first()
 			while(id_check == id):
 				id = random.randrange(100, 999)
-			new_account = Accounts(id=id, username = username1, password = password1, email = None)
+			new_account = Accounts(id=id, username = username1, password = password1)
+			db.session.add(new_account)
+			new_account = Account_Details(id=id)
 			db.session.add(new_account)
 			msg = 'You have successfully registered!'
 			db.session.commit()

@@ -12,6 +12,8 @@ def create_app(config_class=Config):
     from app.profile import bp as profile_bp
     app.register_blueprint(login_bp,url_prefix='/login')
     app.register_blueprint(profile_bp,url_prefix='/profile')
+    with app.app_context():
+        db.create_all()
     return app
 
 from app import models
