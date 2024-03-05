@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'memphis' ;
+  src: url(Memphis-River/Memphis\ River.otf);
+}
+
+.final{
+  border: 5px;
+  border-radius: 20px;
+}
 * {
     margin: 0;
     padding: 0;
@@ -6,14 +15,14 @@
 
   h1{
     margin-top: 100px;
-    color: #f2ebeb; font-family: 'Poppins', sans-serif; font-size: 70px; line-height: 24px;  text-align: center;
-    margin-bottom: 20px;
+    color: #f2ebeb; font-family: 'memphis', sans-serif; font-size: 100px; text-align: center;
   }
   
   body {
-    font-family: "Inter", Arial, Helvetica, sans-serif;
-    background: rgb(3,6,55);
-    background: linear-gradient(354deg, rgba(3,6,55,1) 0%, rgba(60,7,83,1) 35%, rgba(128,6,95,1) 100%);
+    font-family: "memphis", sans-serif;
+    background-color: black;
+    /*background: rgb(3,6,55);
+    background: linear-gradient(354deg, rgba(3,6,55,1) 0%, rgba(60,7,83,1) 35%, rgba(128,6,95,1) 100%);*/
   }
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -21,6 +30,7 @@
       -webkit-backdrop-filter: blur(24px);
       backdrop-filter: blur(50px);
       background-color:rgba(255, 255, 255, 0.569);  
+      border-radius: 50px;
     }
     .warning {
       display: none;
@@ -52,14 +62,14 @@
   .formbold-form-label {
     display: block;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 24px;
     color: #07074d;
     margin-bottom: 12px;
   }
   
   .formbold-form-label-2 {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 20px;
   }
   
@@ -84,11 +94,12 @@
   
   .formbold-btn {
     text-align: center;
-    font-size: 16px;
+    font-size: 25px;
     border-radius: 6px;
     padding: 14px 32px;
     border: none;
     font-weight: 600;
+    font-family: 'memphis';
     background-color: #6a64f1;
     color: white;
     width: 100%;
@@ -168,4 +179,22 @@
   button[type="button"]:hover {
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
   }
+  .formbold-main-wrapper{
+    padding-left: 200px;
+    padding-right: 200px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  #main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensures the background stays behind other content */
+  }
   
+  #result {
+      font-family: 'Times New Roman', Times, serif;
+  }

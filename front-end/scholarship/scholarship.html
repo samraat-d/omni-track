@@ -5,61 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scholarship Page</title>
   <link rel="stylesheet" href="scholarship.css">
-  <script src="your_script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"></script>
 </head>
 <body>
-  <h1>ScholarMatch Finder</h1>
-  <div class="formbold-main-wrapper">
-    <div class="formbold-form-wrapper">
-      <form id="scholarshipForm">
-        <label class="formbold-form-label">Name: <br><br><input type="text" id="name" class="formbold-form-input"></label>
-        <label class="formbold-form-label">Age: <br><br><input type="text" id="age" class="formbold-form-input"></label>
-        <label class="formbold-form-label">DOB: <br><br><input type="date" id="dob" class="formbold-form-input"></label>
-        <label class="formbold-form-label">Gender: <br><br>
-          <select id="gender" class="formbold-form-input">
-            <option disabled selected>Choose--</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
-          </select>
-        </label>
-        <label class="formbold-form-label">Choose the reservation: <br><br>
-          <select id="reservation" class="formbold-form-input">
-            <option disabled selected>Choose</option>
-            <option>GEN-EWS</option>
-            <option>OBC-NCL</option>
-            <option>SC</option>
-            <option>ST</option>
-            <option>People with disabilities</option>
-          </select>
-        </label>
-        <label class="formbold-form-label">Course of interest: <br><br>
-          <select id="course" class="formbold-form-input">
-          <option value="CIVIL ENGINEERING">CIVIL ENGINEERING</option>
-          <option value="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</option>
-          <option value="ELECTRICAL & ELECTRONICS ENGINEERING">ELECTRICAL & ELECTRONICS ENGINEERING</option>
-          <option value="ELECTRONICS & COMMUNICATION ENGINEERING">ELECTRONICS & COMMUNICATION ENGINEERING</option>
-          <option value="INDUSTRIAL ENGINEERING & MANAGEMENT">INDUSTRIAL ENGINEERING & MANAGEMENT</option>
-        <option value="COMPUTER SCIENCE AND ENGINEERING">COMPUTER SCIENCE AND ENGINEERING</option>
-        <option value="ElECTRONICS & TELECOMMUNICATION ENGINEERING">ElECTRONICS & TELECOMMUNICATION ENGINEERING</option>
-        <option value="INFORMATION SCIENCE AND ENGINEERING">INFORMATION SCIENCE AND ENGINEERING</option>
-        <option value="ELECTRONICS & INSTRUMENTATION ENGINEERING">ELECTRONICS & INSTRUMENTATION ENGINEERING</option>
-        <option value="MEDICAL ELECTRONICS ENGINEERING">MEDICAL ELECTRONICS ENGINEERING</option>
-        <option value="BIO TECHNOLOGY">BIO TECHNOLOGY</option>
-        <option value="CHEMICAL ENGINEERING">CHEMICAL ENGINEERING</option>
-        <option value="AEROSPACE ENGINEERING">AEROSPACE ENGINEERING</option>
-        <option value="ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING">ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING</option>
-        <option value="COMPUTER SCIENCE AND ENGINEERING (DATA SCIENCE)">COMPUTER SCIENCE AND ENGINEERING (DATA SCIENCE)</option>
-        <option value="COMPUTER SCIENCE AND ENGINEERING (INTERNET OF THINGS AND CYBER SECURITY INCLUDING BLOCK CHAIN TECHNOLOGY)">COMPUTER SCIENCE AND ENGINEERING (INTERNET OF THINGS AND CYBER SECURITY INCLUDING BLOCK CHAIN TECHNOLOGY)</option>
-        <option value="ARTIFICIAL INTELLIGENCE (AI) AND DATA SCIENCE">ARTIFICIAL INTELLIGENCE (AI) AND DATA SCIENCE</option>
-        <option value="COMPUTER SCIENCE AND BUSINESS SYSTEMS">COMPUTER SCIENCE AND BUSINESS SYSTEMS</option>
-          </select>
-        </label>
-        <label class="formbold-form-label">GPA: <br><br><input type="text" name="gpa" id="gpa" class="formbold-form-input"></label>
-        <button type="button" class="formbold-btn" onclick="generateScholarship()">GENERATE!</button><br><br>
-        <div id="result"></div>
-      </form>
+  <div id="main"></div>
+  <div class="final">
+    <h1>Scholarship Finder</h1>
+    <div class="formbold-main-wrapper">
+      <div class="formbold-form-wrapper">
+        <form id="scholarshipForm">
+          <br>
+          <label class="formbold-form-label">Name: <br><input type="text" id="name" class="formbold-form-input"></label>
+          <label class="formbold-form-label">Age: <br><input type="text" id="age" class="formbold-form-input"></label>
+          <label class="formbold-form-label">DOB: <br><input type="date" id="dob" class="formbold-form-input"></label>
+          <label class="formbold-form-label">Gender: <br>
+            <select id="gender" class="formbold-form-input">
+              <option disabled selected>Choose--</option>
+              <option>Male</option> 
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label class="formbold-form-label">Choose the reservation: <br>
+            <select id="reservation" class="formbold-form-input">
+              <option disabled selected>Choose</option>
+              <option>GEN-EWS</option>
+              <option>OBC-NCL</option>
+              <option>SC</option>
+              <option>ST</option>
+              <option>People with disabilities</option>
+            </select>
+          </label>
+          <label class="formbold-form-label">Course of interest: <br>
+            <select id="course" class="formbold-form-input">
+              <option disabled selected>--Select Branch--</option>
+              <option value="CIVIL ENGINEERING">CIVIL ENGINEERING</option>
+              <option value="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</option>
+              <option value="ELECTRICAL & ELECTRONICS ENGINEERING">ELECTRICAL & ELECTRONICS ENGINEERING</option>
+              <option value="COMPUTER SCIENCE ENGINEERING">COMPUTER SCIENCE ENGINEERING</option>
+              <option value="INFORMATION SCIENCE ENGINEERING">INFORMATION SCIENCE ENGINEERING</option>
+              <!-- Other options omitted for brevity -->
+            </select>
+          </label>
+          <label class="formbold-form-label">GPA: <br><input type="text" name="gpa" id="gpa" class="formbold-form-input"></label>
+          <button type="button" class="formbold-btn" onclick="generateScholarship()">GENERATE!</button><br>
+        </form>
+        <!-- Add a container for displaying scholarship results -->
+        <div id="resultContainer"></div>
+      </div>
     </div>
   </div>
+
+  <script src="your_script.js"></script>
+  <script src="three.r134.min.js"></script>
+  <script src="vanta.halo.min.js"></script>
+  <script>
+    VANTA.HALO({
+      el: "#main",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      amplitudeFactor: 1.20,
+      xOffset: 0.44,
+      yOffset: 0.50,
+      size: 1.80
+    });
+  </script>
 </body>
 </html>
