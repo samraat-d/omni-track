@@ -18,7 +18,7 @@
                   <div class="card">
                     <div class="card-body">
                       <div class="d-flex flex-column align-items-center text-center">
-                        <img src="{{profile_pic}}" alt="Admin" class="rounded-circle" width="150">
+                        <img src="{{profile_pic}}" alt="Admin" class="rounded-circle" width="150" height="150">
                         <div class="mt-3">
                           <h4>{{full_name}}</h4>
                           <p class="text-secondary mb-2">{{email}}</p>
@@ -56,6 +56,9 @@
                   <div class="card mb-3" style="height: 100%;">
                     <div class="wrap-login100">
                         <div class="card-body" style="margin-top: 20%;">
+                            <div style="padding-top: 15px; text-align: center;">
+                              <h6 class="mb-0">{{msg}}</h6>
+                            </div>
                             <div class="row">
                               <div class="col-sm-3">
                                 <h6 class="mb-0">Full Name</h6>
@@ -104,7 +107,7 @@
                             <div class="row">
                               <div class="col-sm-12">
                                   <div class="container-login100-form-btn">
-                                      <a class="login100-form-btn" target="__blank" href="{{url_for('profile.profile_edit')}}">Edit</a>
+                                      <a class="login100-form-btn" href="{{url_for('profile.profile_edit')}}">Edit</a>
                                   </div>
                                 
                               </div>

@@ -1,9 +1,4 @@
-body{
-    margin-top:20px;
-    color: #1a202c;
-    text-align: left;
-    background-color: #e2e8f0;    
-}
+
 .main-body {
     padding: 15px;
 }
@@ -72,11 +67,21 @@ body{
   .profile-pic input {
     display: none;
   }
-  .profile-pic img {
+  .profile-pic #img-profile {
     position: absolute;
     object-fit: cover;
     width: 165px;
     height: 165px;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.35);
+    border-radius: 100px;
+    z-index: 0;
+  }
+
+  .profile-pic #img-top {
+    position: absolute;
+    object-fit: cover;
+    width: 75px;
+    height: 75px;
     box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.35);
     border-radius: 100px;
     z-index: 0;

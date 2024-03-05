@@ -35,12 +35,18 @@ def login_func():
 		#for user in query:
 			#print(object_as_dict(user))
 		if account:
+			picdb = Account_Details.query.filter_by(id=account.id).first()
+			if picdb.profile_pic == None:
+				picdb.profile_pic = "default-pfp.jpg"
+				db.session.commit()
+			profile_pic_name = 'profile/profile_pics/' + picdb.profile_pic
+			profile_pic = url_for('profile.static', filename=profile_pic_name)
+			session['profile_pic'] = picdb.profile_pic
 			session['loggedin'] = True
 			session['id'] = account.id
 			session['username'] = account.username
-			msg = 'Logged in successfully !'
-			profile_pic = '../profile/static/profile/pics/default-pfp.jpg'
-			return render_template('profile/profile-edit.html', profile_pic=profile_pic, msg=msg)
+			msg = 'Logged in successfully!'
+			return render_template('profile/profile.html', profile_pic=profile_pic, msg=msg)
 		if len(username1)==0:
 			msg_username = 'alert-validate'
 			msg = 'Incorrect username or password !'
@@ -102,11 +108,16 @@ def register():
 				id = random.randrange(100, 999)
 			new_account = Accounts(id=id, username = username1, password = password1)
 			db.session.add(new_account)
-			new_account = Account_Details(id=id)
+			new_account = Account_Details(id=id,profile_pic="default-pfp.jpg")
 			db.session.add(new_account)
-			msg = 'You have successfully registered!'
+			msg = 'You have successfully registered! Complete your profile to enjoy!'
 			db.session.commit()
-			return render_template('login/login.html', msg_register = msg)
+			session['profile_pic'] = "default-pfp.jpg"
+			session['loggedin'] = True
+			session['id'] = id
+			session['username'] = username1
+			profile_pic = url_for('profile.static', filename='profile/profile_pics/default-pfp.jpg')
+			return render_template('profile/profile.html', profile_pic=profile_pic, msg=msg)
 	return render_template('login/register.html', msg = msg, msg_password = msg_password, msg_username = msg_username, msg_password_class = msg_password_class, msg_username_class = msg_username_class, msg_confirmpass = msg_confirmpass, msg_confirmpass_class = msg_confirmpass_class)
 
 

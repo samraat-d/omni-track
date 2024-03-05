@@ -473,19 +473,6 @@ pre {
   margin-right: auto;
   margin-left: auto; }
 
-.bgimage {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  background-image: url(../college-background.jpg);
-  background-size: cover;
-  opacity: 0.2;                      /* <------ */
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
 .row {
   display: -webkit-box;
   display: -ms-flexbox;

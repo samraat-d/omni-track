@@ -6,12 +6,20 @@
     <meta charset="utf-8">
     <meta name="description" content="Offline Javascript Calendar App">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
-
+    <link rel="icon" type="image/png" href="static/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/fonts/iconic/css/material-design-iconic-font.min.css">
     <!-- STYLESHEET + JAVASCRIPT -->
-    <script defer src="static/calendar.js"></script>
-    <link rel="stylesheet" href="static/calendar.css">
+    <script defer src="static/js/calendar.js"></script>
+    <link rel="stylesheet" href="static/css/calendar.css">
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
   </head>
   <body>
+    <div class="limiter" id="calWrap">
     <!-- (A) PERIOD SELECTOR -->
     <div id="calHead">
       <div id="calPeriod">
@@ -31,7 +39,7 @@
     </div>
 
     <!-- (C) EVENT FORM -->
-    <dialog id="calForm"><form method="dialog">
+    <dialog id="calForm"><form method="dialog" class='login100-form validate-form'>
       <div id="evtCX">X</div>
       <h2 class="evt100">CALENDAR EVENT</h2>
       <div class="evt50">
@@ -60,5 +68,6 @@
         <input type="submit" id="evtSave" value="Save">
       </div>
     </form></dialog>
+  </div>
   </body>
 </html>
