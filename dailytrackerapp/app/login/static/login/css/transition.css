@@ -1,0 +1,144 @@
+.btn {
+    height: 60px;
+    width: 282px;
+    margin: 20px auto;
+    -webkit-box-shadow: 0 0 20px 5px rgba(106, 0, 127, 0.5);
+    -moz-box-shadow: 0 0 20px 5px rgba(106, 0, 127, 0.5);
+    box-shadow: 0 0 20px 5px rgba(106, 0, 127, 0.5);
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ 
+.login,
+.signup {
+    color: beige;
+    font-size: 22px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+}
+
+.signup{
+    left: 10px;
+}
+
+.login{
+    left: 3px;
+}
+ 
+ 
+.slider {
+    height: 60px;
+    width: 150px;
+    border-radius: 50px;
+    background-image: linear-gradient(to right,
+            rgb(94, 0, 113),
+            rgb(0, 19, 143));
+    position: relative;
+    top: 80px;
+    left: 54px;
+    transition: all 0.5s ease-in-out;
+}
+ 
+.moveslider {
+    left: 186px;
+}
+
+.registerslider{
+    height: 60px;
+    width: 150px;
+    border-radius: 50px;
+    background-image: linear-gradient(to right,
+            rgb(94, 0, 113),
+            rgb(0, 19, 143));
+    position: relative;
+    top: 80px;
+    left: 186px;
+    transition: all 0.5s ease-in-out;
+}
+
+.moveregisterslider {
+    left: 54px;
+}
+ 
+.form-section {
+    height: 369px;
+    width: 1000px;
+    display: flex;
+    position: relative;
+    transition: all 0.7s ease-in-out;
+}
+ 
+.form-section-move {
+    left: -500px;
+}
+ 
+.login-box,
+.signup-box {
+    height: 100%;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 40px;
+    padding-top: 98px;
+    padding-left: 0px;
+    padding-right: 100px;
+}
+
+ 
+/* For Responsiveness of the page */
+ 
+@media screen and (max-width: 650px) {
+ 
+ 
+    .moveslider {
+        left: 150px;
+    }
+ 
+    .form-section {
+        height: 500px;
+        width: 600px;
+    }
+ 
+    .form-section-move {
+        left: -300px;
+    }
+ 
+    .login-box,
+    .signup-box {
+        height: 100%;
+        width: 300px;
+    }
+}
+ 
+@media screen and (max-width: 320px) {
+ 
+ 
+    .login,
+    .signup {
+        font-size: 19px;
+    }
+ 
+    .form-section {
+        height: 500px;
+        width: 500px;
+    }
+ 
+    .form-section-move {
+        left: -500px;
+    }
+ 
+    .login-box,
+    .signup-box {
+        height: 100%;
+        width: 250px;
+    }
+
+}

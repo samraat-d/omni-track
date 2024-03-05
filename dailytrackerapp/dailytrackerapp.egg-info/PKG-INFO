@@ -2,3 +2,6 @@ Metadata-Version: 2.1
 Name: dailytrackerapp
 Version: 0.0.0
 Requires-Dist: flask
+Requires-Dist: flask_sqlalchemy
+Requires-Dist: sqlalchemy
+Requires-Dist: flask_socketio
