@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPA CALCULATOR</title>
+  <link rel="stylesheet" href="{{url_for('calculators.static', filename='calculators/css/gpa.css')}}">
+  <script src="{{url_for('calculators.static', filename='calculators/js/gpa.js')}}"></script>
+  <link rel="stylesheet" href="{{url_for('calculators.static', filename='calculators/css/scholarship.css')}}">
+  <!--nav styles-->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('profile.static', filename='profile/fonts/iconic/css/material-design-iconic-font.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('profile.static', filename='profile/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('profile.static', filename='profile/css/main.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('profile.static', filename='profile/css/util.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('profile.static', filename='profile/nav/style.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('profile.static', filename='profile/nav/profile.css') }}">
+</head>
+<body>
+  <!--Start nav-->
+  <div id="background-animation-nav">
+    <section class="ftco-section">
+      <div class="container-fluid px-md-5">
+        <div class="row justify-content-between">
+          <div class="col-md-8 order-md-last">
+            <div class="row">
+              <div class="col-md-6 text-center">
+                <a class="navbar-brand" href="{{url_for('profile.profile')}}">Omni Track <span></span></a>
+              </div>
+              <div class="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3" style="padding-right: 75px; bottom:15px;">
+                <div class="profile-pic">
+                  <img id='img-top' src="{{profile_pic}}"/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex">
+            <div class="social-media">
+              <p class="mb-0 d-flex">
+                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+              </p>
+                </div>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  
+      
+        <div class="container-fluid">
+        
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span> Menu
+          </button>
+          <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav m-auto">
+              <li class="nav-item active"><a href="{{url_for('profile.profile')}}" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">PDF Chat Bot</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Calculator</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="{{url_for('calculators.gpa')}}">CGPA Calculator</a>
+                  <a class="dropdown-item" href="{{url_for('calculators.scholarship')}}">Scholarship</a>
+                </div>
+              </li>
+              <li class="nav-item"><a href="{{url_for('calendar.index')}}" class="nav-link">Calendar</a></li>
+              <li class="nav-item"><a href="{{url_for('todo.todo')}}" class="nav-link">Todo List</a></li>
+          <li class="nav-item"><a href="{{url_for('profile.profile_edit')}}" class="nav-link">Edit Profile</a></li>
+          <li class="nav-item"><a href="{{url_for('login.logout')}}" class="nav-link">Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </section>
+  </div>
+    <!-- END nav -->
+  <div style="padding-top: 80px;" id="main-bg-halo">
+  <h1>GPA CALCULATOR</h1>
+  <div class="formbold-main-wrapper">
+    <div class="formbold-form-wrapper">
+      <form id="gpaForm">
+        <label class="formbold-form-label">Choose the semester: <br><br>
+            <select id="reservation" class="formbold-form-input">
+              <option disabled selected>Choose</option>
+              <option value='1'>Semester 1</option>
+              <option value='2'>Semester 2</option>
+              <option value='3'>Semester 3</option>
+              <option value='4'>Semester 4</option>
+              <option value='5'>Semester 5</option>
+              <option value='6'>Semester 6</option>
+              <option value='7'>Semester 7</option>
+              <option value='8'>Semester 8</option>
+            </select>
+          </label>
+        <label class="formbold-form-label">Choose the department: <br><br>
+            <select id="course" class="formbterestold-form-input">
+            <option value="CIVIL ENGINEERING">CIVIL ENGINEERING</option>
+            <option value="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</option>
+            <option value="ELECTRICAL & ELECTRONICS ENGINEERING">ELECTRICAL & ELECTRONICS ENGINEERING</option>
+            <option value="ELECTRONICS & COMMUNICATION ENGINEERING">ELECTRONICS & COMMUNICATION ENGINEERING</option>
+            <option value="INDUSTRIAL ENGINEERING & MANAGEMENT">INDUSTRIAL ENGINEERING & MANAGEMENT</option>
+          <option value="COMPUTER SCIENCE AND ENGINEERING">COMPUTER SCIENCE AND ENGINEERING</option>
+          <option value="ElECTRONICS & TELECOMMUNICATION ENGINEERING">ElECTRONICS & TELECOMMUNICATION ENGINEERING</option>
+          <option value="INFORMATION SCIENCE AND ENGINEERING">INFORMATION SCIENCE AND ENGINEERING</option>
+          <option value="ELECTRONICS & INSTRUMENTATION ENGINEERING">ELECTRONICS & INSTRUMENTATION ENGINEERING</option>
+          <option value="MEDICAL ELECTRONICS ENGINEERING">MEDICAL ELECTRONICS ENGINEERING</option>
+          <option value="BIO TECHNOLOGY">BIO TECHNOLOGY</option>
+          <option value="CHEMICAL ENGINEERING">CHEMICAL ENGINEERING</option>
+          <option value="AEROSPACE ENGINEERING">AEROSPACE ENGINEERING</option>
+          <option value="ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING">ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING</option>
+          <option value="COMPUTER SCIENCE AND ENGINEERING (DATA SCIENCE)">COMPUTER SCIENCE AND ENGINEERING (DATA SCIENCE)</option>
+          <option value="COMPUTER SCIENCE AND ENGINEERING (INTERNET OF THINGS AND CYBER SECURITY INCLUDING BLOCK CHAIN TECHNOLOGY)">COMPUTER SCIENCE AND ENGINEERING (INTERNET OF THINGS AND CYBER SECURITY INCLUDING BLOCK CHAIN TECHNOLOGY)</option>
+          <option value="ARTIFICIAL INTELLIGENCE (AI) AND DATA SCIENCE">ARTIFICIAL INTELLIGENCE (AI) AND DATA SCIENCE</option>
+          <option value="COMPUTER SCIENCE AND BUSINESS SYSTEMS">COMPUTER SCIENCE AND BUSINESS SYSTEMS</option>
+            </select>
+          </label>
+        <label  for="num" class="formbold-form-label">Enter the number of subjects <br><br><input type="number" id="num" class="formbold-form-input" min="0" max="10"></label>
+        <button type="button" class="formbold-btn" onclick="inputmarks()">GENERATE!</button><br><br>
+        <div id="gpaForm1"></div>
+  </form>
+</br>
+  <button type="button" class="formbold-btn" onclick="gpacal()">Submit</button>
+</br></br></br>
+  <div id="result"></div>
+</div>
+</div>
+</div>
+<script src="{{url_for('calculators.static', filename='calculators/js/scholarship.js')}}"></script>
+<script src="{{url_for('calculators.static', filename='calculators/js/three.min.js')}}"></script>
+<script src="{{url_for('calculators.static', filename='calculators/js/vanta.halo.min.js')}}"></script>
+  <script>
+    VANTA.HALO({
+      el: "#main-bg-halo",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      amplitudeFactor: 1.20,
+      xOffset: 0.44,
+      yOffset: 0.50,
+      size: 1.80
+    });
+  </script>
+      <!--nav scripts-->
+      <script src="{{ url_for('profile.static', filename='profile/nav/bootstrap.min.js') }}"></script>
+      <script src="{{ url_for('profile.static', filename='profile/nav/jquery.min.js') }}"></script>
+      <script src="{{ url_for('profile.static', filename='profile/nav/main.js') }}"></script>
+      <script src="{{ url_for('profile.static', filename='profile/nav/three.min.js') }}"></script>
+      <script src="{{ url_for('profile.static', filename='profile/nav/vanta.birds.min.js') }}"></script>
+      <script>
+        VANTA.BIRDS({
+          el: "#background-animation-nav",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 150.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          backgroundColor: 0xb072f,
+          color1: 0xfcfcfc,
+          color2: 0x7600ff,
+          separation: 42.00,
+          alignment: 34.00,
+          quantity: 4.00
+        })
+        </script>
+</body>
+</html>

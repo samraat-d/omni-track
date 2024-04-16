@@ -26,10 +26,17 @@ class Account_Details(db.Model):
 		return f'<Account {self.id},{self.name},{self.email},{self.phone},{self.dob},{self.address},{self.website},{self.github},{self.twitter}, {self.instagram}, {self.facebook},{self.profile_pic} >'
 	
 class Events(db.Model):
-  account_id = db.Column(db.Integer)
   id = db.Column(db.Integer, primary_key=True)
+  account_id = db.Column(db.Integer)
   start = db.Column(db.DateTime)
   end = db.Column(db.DateTime)
   text = db.Column(db.String)
   color = db.Column(db.String)
   bg = db.Column(db.String)
+
+
+class Todo(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    account_id = db.Column(db.Integer)
+    title = db.Column(db.String)
+    complete = db.Column(db.Boolean)

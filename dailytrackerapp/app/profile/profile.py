@@ -13,6 +13,7 @@ from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
 from sqlalchemy import inspect
 from sqlalchemy import text
 from sqlalchemy.sql import func
+
 def object_as_dict(obj):
 	return {c.key: getattr(obj, c.key)
 		for c in inspect(obj).mapper.column_attrs}
@@ -25,15 +26,35 @@ def profile():
 		account = Account_Details.query.filter_by(id=id).first()
 		if account:
 			full_name = account.name
+			if full_name == None:
+				full_name = ''
 			email = account.email
+			if email == None:
+				email = ''
 			phone = account.phone
+			if phone == None:
+				phone = ''
 			dob = account.dob
+			if dob == None:
+				dob = ''
 			address = account.address
+			if address == None:
+				address = ''
 			website = account.website
+			if website == None:
+				website = ''
 			github = account.github
+			if github == None:
+				github = ''
 			twitter = account.twitter
+			if twitter == None:
+				twitter = ''
 			instagram = account.instagram
+			if instagram == None:
+				instagram = ''
 			facebook = account.facebook
+			if facebook == None:
+				facebook = ''
 			profile_pic_name = 'profile/profile_pics/' + account.profile_pic
 			profile_pic = url_for('profile.static', filename=profile_pic_name)
 			return render_template('profile/profile.html', full_name=full_name, email=email, phone=phone, dob=dob, address=address, website=website, github=github, twitter=twitter, instagram=instagram, facebook=facebook, profile_pic=profile_pic)
