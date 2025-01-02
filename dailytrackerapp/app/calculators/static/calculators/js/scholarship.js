@@ -1,6 +1,4 @@
 function generateScholarship() {
-  var name = document.getElementById("name").value;
-  var age = document.getElementById("age").value;
   var dob = document.getElementById("dob").value;
   var gender = document.getElementById("gender").value;
   var course = document.getElementById("course").value;

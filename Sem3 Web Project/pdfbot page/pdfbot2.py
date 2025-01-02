@@ -10,6 +10,8 @@ from langchain.llms import HuggingFaceHub
 import os
 from langchain.chat_models import ChatOpenAI
 from htmlTemplates import css, bot_template, user_template
+from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
+
 embedding_model_name = os.environ.get('EMBEDDING_MODEL_NAME')
 def get_pdf_text(pdf_docs):
     text=""
@@ -32,8 +34,24 @@ def get_vector_store(text_chunks):
 
 
 def get_conversation_chain(vectorstore):
-    #llm = ChatOpenAI()
-    llm = HuggingFaceHub(repo_id="google/gemma-7b", model_kwargs={"temperature":0.7, "max_length":750})
+    llm = ChatOpenAI()
+    #llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", model_kwargs={"temperature":0.5, "max_length":512})
+    
+
+    model_name = "deepset/roberta-base-squad2"
+
+    # a) Get predictions
+    nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
+    QA_input = {
+        'question': 'Why is model conversion important?',
+        'context': 'The option to convert models between FARM and transformers gives freedom to the user and let people easily switch between frameworks.'
+    }
+    res = nlp(QA_input)
+    print(res)
+
+    # b) Load model & tokenizer
+    llm = AutoModelForQuestionAnswering.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
     memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
     conversation_chain = ConversationalRetrievalChain.from_llm(llm=llm,retriever=vectorstore.as_retriever(),memory=memory)
     return conversation_chain
@@ -66,10 +84,13 @@ def main():
         handle_user_input(user_question)
     with st.sidebar:
         st.header("Chat with PDF 💬")
+        st.title("LLM Chatapp using LangChain")
         st.subheader("Your Documents")
         pdf_docs = st.file_uploader("Upload the PDF Files here and Click on Process", accept_multiple_files=True)
         st.markdown('''
-        - [Go Back](http://localhost:5000/profile/profile)
+        - [Streamlit](https://streamlit.io/)
+        - [LangChain](https://python.langchain.com/)
+        - [OpenAI](https://platform.openai.com/docs/models) LLM Model
         ''')
         if st.button('Process'):
             with st.spinner("Processing"):

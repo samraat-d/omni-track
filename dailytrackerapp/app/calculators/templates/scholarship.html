@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scholarship Page</title>
-  <link rel="stylesheet" href="{{url_for('calculators.static', filename='calculators/css/scholarship.css')}}">
+  
   <!--nav styles-->
   <link rel="stylesheet" type="text/css" href="{{ url_for('profile.static', filename='profile/fonts/iconic/css/material-design-iconic-font.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('profile.static', filename='profile/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
@@ -12,6 +12,8 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('profile.static', filename='profile/css/util.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('profile.static', filename='profile/nav/style.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('profile.static', filename='profile/nav/profile.css') }}">
+
+  <link rel="stylesheet" href="{{url_for('calculators.static', filename='calculators/css/scholarship.css')}}">
 </head>
 <body>
   <!--Start nav-->
@@ -54,7 +56,7 @@
           <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav m-auto">
               <li class="nav-item active"><a href="{{url_for('profile.profile')}}" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">PDF Chat Bot</a></li>
+          <li class="nav-item"><a href="http://localhost:8501/" class="nav-link">PDF Chat Bot</a></li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Calculator</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -80,8 +82,6 @@
       <div class="formbold-form-wrapper">
         <form id="scholarshipForm">
           <br>
-          <label class="formbold-form-label">Name: <br><input type="text" id="name" class="formbold-form-input"></label>
-          <label class="formbold-form-label">Age: <br><input type="text" id="age" class="formbold-form-input"></label>
           <label class="formbold-form-label">DOB: <br><input type="date" id="dob" class="formbold-form-input"></label>
           <label class="formbold-form-label">Gender: <br>
             <select id="gender" class="formbold-form-input">
